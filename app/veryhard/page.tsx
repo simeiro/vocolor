@@ -12,7 +12,7 @@ export default function Home() {
     const [currentSong, setCurrentSong] = useState<Song | null>(null);
     const [currentNumber, setCurrentNumber] = useState(1);
     const [correctCount, setCorrectCount] = useState(0);
-    const [quizSet] = useState(getRandomSongs(0));
+    const [quizSet] = useState(getRandomSongs(3));
     
     useEffect(() => {
         // クライアント側でのみランダムな曲を選択
@@ -197,9 +197,14 @@ export default function Home() {
                     <h2 className="text-2xl">結果</h2>
                     <hr className="mb-4"/>
                     <p className="text-center text-2xl">あなたの得点は<span className="mx-1 text-3xl font-bold text-blue-500">{correctCount}</span>点でした！</p>
-                    <p className="mt-2 text-center text-xl">難易度: 超上級F</p>
+                    <p className="mt-2 text-center text-xl">難易度: 超上級</p>
                     <div className="mt-4 flex justify-center">
-                        <Link href="/easy" className="mt-4 mr-4 px-6 py-2 text-white bg-blue-600 hover:bg-blue-700 rounded-lg shadow-md transition-all">もう一度遊ぶ</Link>
+                        <button
+                        onClick={() => window.location.reload()}
+                        className="mt-4 mr-4 px-6 py-2 text-white bg-blue-600 hover:bg-blue-700 rounded-lg shadow-md transition-all"
+                        >
+                        もう一度遊ぶ
+                        </button>
                         <Link href="/" className="mt-4 px-6 py-2 text-white bg-blue-600 hover:bg-blue-700 rounded-lg shadow-md transition-all">タイトルへ</Link>
                     </div>
                     <div>
@@ -232,7 +237,7 @@ export default function Home() {
                     <h2 className="mt-16 text-2xl">共有する</h2>
                     <hr className="mb-4"/>
                     <div className="flex items-center justify-center">
-                        <Link href={`https://x.com/intent/post?text=${correctCount}点を獲得しました！(超上級F)%0A&url=https://vocolor.vercel.app%0A&hashtags=背景の色からボカロ曲を当てるゲーム`} target="_blank">
+                        <Link href={`https://x.com/intent/post?text=${correctCount}点を獲得しました！(超上級)%0A&url=https://vocolor.vercel.app%0A&hashtags=背景の色からボカロ曲を当てるゲーム`} target="_blank">
                             <p className="mt-4 mr-4 px-4 py-1 text-white bg-gray-600 hover:bg-gray-700 rounded-lg shadow-md transition-all">Xで共有</p>
                         </Link>
                         <button

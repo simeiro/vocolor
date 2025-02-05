@@ -199,7 +199,12 @@ export default function Home() {
                     <p className="text-center text-2xl">あなたの得点は<span className="mx-1 text-3xl font-bold text-blue-500">{correctCount}</span>点でした！</p>
                     <p className="mt-2 text-center text-xl">難易度: 初級</p>
                     <div className="mt-4 flex justify-center">
-                        <Link href="/easy" className="mt-4 mr-4 px-6 py-2 text-white bg-blue-600 hover:bg-blue-700 rounded-lg shadow-md transition-all">もう一度遊ぶ</Link>
+                        <button
+                        onClick={() => window.location.reload()}
+                        className="mt-4 mr-4 px-6 py-2 text-white bg-blue-600 hover:bg-blue-700 rounded-lg shadow-md transition-all"
+                        >
+                        もう一度遊ぶ
+                        </button>
                         <Link href="/" className="mt-4 px-6 py-2 text-white bg-blue-600 hover:bg-blue-700 rounded-lg shadow-md transition-all">タイトルへ</Link>
                     </div>
                     <div>
