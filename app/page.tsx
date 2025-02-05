@@ -114,12 +114,12 @@ export default function Home() {
                       A. プログラムや問題の都合上、背景色が明らかでない背景、色味の少ない背景は除外しています。また、誤って除外されているケースもあります。
                   </p>
               </div>
-              <div className="bg-gray-100 p-4 rounded-lg shadow-md">
+              {/* <div className="bg-gray-100 p-4 rounded-lg shadow-md">
                   <p className="font-bold text-lg">Q. 出てくる問題を教えて</p>
                   <p className="mt-1 text-gray-700">
                       A. この再生リストの曲からランダムに出題されます。
                   </p>
-              </div>
+              </div> */}
           </div>
           <div className="mt-10">
             その他質問がある方はこちらからお問い合わせください
