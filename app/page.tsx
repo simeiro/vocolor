@@ -108,7 +108,7 @@ export default function Home() {
                       A. 背景の色はプログラムによって自動検出しているため、間違いが生じる場合があります。
                   </p>
               </div>
-              <div className="bg-gray-100 p-4 rounded-lg shadow-md dark:text-blac">
+              <div className="bg-gray-100 p-4 rounded-lg shadow-md dark:text-black">
                   <p className="font-bold text-lg">Q. あの有名な曲が問題に出てこない</p>
                   <p className="mt-1 text-gray-700">
                       A. プログラムや問題の都合上、背景色が明らかでない背景、色味の少ない背景は除外しています。また、誤って除外されているケースもあります。
