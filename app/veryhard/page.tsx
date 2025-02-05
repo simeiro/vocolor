@@ -108,39 +108,43 @@ export default function Home() {
 
                     {/* ラジオボタンのリスト */}
                     {!answerButton && (
-                    <div className="mt-16">
-                        <div className="flex flex-col gap-2">
-                            {currentQuiz.map((choice) => (
-                            <label key={choice.id} className="flex items-center gap-2 cursor-pointer">
-                                <input
-                                type="radio"
-                                name=""
-                                value={choice.title}
-                                checked={selectedChoice === choice.title}
-                                onChange={() => setselectedChoice(choice.title)}
-                                className="hidden"
-                                />
-                                <span
-                                className={`w-5 h-5 flex items-center justify-center border-2 rounded-lg transition-all ${
-                                    selectedChoice === choice.title
-                                    ? "border-blue-500 bg-blue-500"
-                                    : "border-gray-400"
-                                }`}
+                        <div>
+                            <div className="mt-16">
+                                <div className="flex flex-col gap-2">
+                                    {currentQuiz.map((choice) => (
+                                    <label key={choice.id} className="flex items-center gap-2 cursor-pointer">
+                                        <input
+                                        type="radio"
+                                        name=""
+                                        value={choice.title}
+                                        checked={selectedChoice === choice.title}
+                                        onChange={() => setselectedChoice(choice.title)}
+                                        className="hidden"
+                                        />
+                                        <span
+                                        className={`w-5 h-5 flex items-center justify-center border-2 rounded-lg transition-all ${
+                                            selectedChoice === choice.title
+                                            ? "border-blue-500 bg-blue-500"
+                                            : "border-gray-400"
+                                        }`}
+                                        >
+                                        {selectedChoice === choice.title && (
+                                            <span className="w-2.5 h-2.5 bg-white rounded-full"></span>
+                                        )}
+                                        </span>
+                                        <span className="text-lg">{choice.title}</span>
+                                    </label>
+                                    ))}
+                                </div>
+                            </div>
+                            <div className="flex items-center justify-center">
+                                <button
+                                    onClick={answered}
+                                    className="mt-4 px-6 py-2 text-white bg-blue-600 hover:bg-blue-700 rounded-lg shadow-md transition-all "
                                 >
-                                {selectedChoice === choice.title && (
-                                    <span className="w-2.5 h-2.5 bg-white rounded-full"></span>
-                                )}
-                                </span>
-                                <span className="text-lg">{choice.title}</span>
-                            </label>
-                            ))}
-                        </div>
-                        <button
-                            onClick={answered}
-                            className="mt-4 px-6 py-2 text-white bg-blue-600 hover:bg-blue-700 rounded-lg shadow-md transition-all"
-                        >
-                            回答する
-                        </button>
+                                    回答する
+                                </button>
+                            </div>
                     </div>
                     )}
                     
@@ -170,20 +174,24 @@ export default function Home() {
                                 ))}
                             </div>
                             {currentNumber < questions && (
-                                <button
-                                onClick={next}
-                                className="mt-4 px-6 py-2 text-white bg-blue-600 hover:bg-blue-700 rounded-lg shadow-md transition-all"
-                                >
-                                    次へ
-                                </button>
+                                <div className="flex items-center justify-center">
+                                    <button
+                                    onClick={next}
+                                    className="mt-4 px-6 py-2 text-white bg-blue-600 hover:bg-blue-700 rounded-lg shadow-md transition-all"
+                                    >
+                                        次へ
+                                    </button>
+                                </div>
                             )}
                             {currentNumber === questions && (
-                                <button
-                                onClick={showResult}
-                                className="mt-4 px-6 py-2 text-white bg-blue-600 hover:bg-blue-700 rounded-lg shadow-md transition-all"
-                                >
-                                    結果を見る
-                                </button>
+                                <div className="flex items-center justify-center"> 
+                                    <button
+                                    onClick={showResult}
+                                    className="mt-4 px-6 py-2 text-white bg-blue-600 hover:bg-blue-700 rounded-lg shadow-md transition-all"
+                                    >
+                                        結果を見る
+                                    </button>
+                                </div>
                             )}
                         </div>
                     )}
