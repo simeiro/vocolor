@@ -88,7 +88,6 @@ export default function Home() {
                             style={{ width: `${(currentNumber / questions) * 100}%` }}
                         />
                     </div>
-                    <hr className="mb-4"/>
                     <div className="relative max-w-[95%] mx-auto mt-10 aspect-video overflow-hidden">
                         {!answerButton && (
                             <div
