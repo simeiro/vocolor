@@ -4,6 +4,7 @@ import Footer from "@/app/component/footer";
 import { useEffect, useState } from "react";
 import songsData from "@/public/data/home.json"
 import Image from "next/image";
+import Link from "next/link";
 
 type Song = typeof songsData.songs[number];
 
@@ -74,24 +75,24 @@ export default function Home() {
           <hr className="mb-10"/>
           <div className="flex flex-wrap items-center justify-center">
             <div className="w-35 h-20 mx-4">
-              <a href="/easy">
+              <Link href="/easy">
                 <p className="mt-4 mr-4 px-6 py-2 text-white bg-gray-600 hover:bg-gray-700 rounded-lg shadow-md transition-all">初級</p>
-              </a>
+              </Link>
             </div>
             <div className="w-35 h-20 mx-4">
-              <a href="/normal">
+              <Link href="/normal">
                 <p className="mt-4 mr-4 px-6 py-2 text-white bg-gray-600 hover:bg-gray-700 rounded-lg shadow-md transition-all">中級</p>
-              </a>
+              </Link>
             </div>
             <div className="w-35 h-20 mx-4">
-              <a href="/hard">
+              <Link href="/hard">
                 <p className="mt-4 mr-4 px-6 py-2 text-white bg-gray-600 hover:bg-gray-700 rounded-lg shadow-md transition-all">上級</p>
-              </a>
+              </Link>
             </div>
             <div className="w-35 h-20 mx-4">
-              <a href="/veryhard">
+              <Link href="/veryhard">
                 <p className="mt-4 mr-4 px-6 py-2 text-white bg-gray-600 hover:bg-gray-700 rounded-lg shadow-md transition-all">超上級</p>
-              </a>
+              </Link>
             </div>
           </div>
         </div>
@@ -122,8 +123,8 @@ export default function Home() {
           </div>
           <div className="mt-10">
             その他質問がある方はこちらからお問い合わせください
-            <p><a href="https://x.com/messages/compose?recipient_id=1245398114917203969" className="text-blue-500 hover:underline" target="_blank" >XのDM</a></p>
-            <p><a href="https://forms.gle/8DBdHFBjBzKcw2pb9" className="text-blue-500 hover:underline" target="_blank">お問い合わせフォーム</a></p>
+            <p><Link href="https://x.com/messages/compose?recipient_id=1245398114917203969" className="text-blue-500 hover:underline" target="_blank" >XのDM</Link></p>
+            <p><Link href="https://forms.gle/8DBdHFBjBzKcw2pb9" className="text-blue-500 hover:underline" target="_blank">お問い合わせフォーム</Link></p>
           </div>
         </div>
         
@@ -134,35 +135,35 @@ export default function Home() {
           <p>このゲームは下記、再生リスト、サービスを元に制作しました。この場をお借りして、感謝申し上げます。</p>
 
           <p className="mt-4 font-bold">曲名情報の取得</p>
-          <a href="https://vocadb.net/" target="_blank">
+          <Link href="https://vocadb.net/" target="_blank">
             <Image 
               src="/vocadb.png"
               width={200}
               height={200}
               alt="vocadb"
             />
-          </a>
+          </Link>
           
           <p className="font-bold">再生リスト</p>
           <ul className="">
-            <li><a href="https://www.youtube.com/watch?v=19y8YTbvri8&list=PLTOj1BFS6AhN4Fz80WvdMu4cdOFZ1oW1q" className="text-blue-500 hover:underline" target="_blank">2024年 ボカロ ランキング</a></li>
-            <li><a href="https://www.youtube.com/watch?v=D6DVTLvOupE&list=PLTOj1BFS6AhOd93A68NicEahdJehOhXR6" className="text-blue-500 hover:underline" target="_blank">2023年 人気 ボカロ</a></li>
-            <li><a href="https://www.youtube.com/watch?v=vB8sxY_PJ_w&list=PLTOj1BFS6AhOSsQGt0SViSWpkz0P29KFM" className="text-blue-500 hover:underline" target="_blank">2022年 人気 ボカロ</a></li>
-            <li><a href="https://www.youtube.com/watch?v=e1xCOsgWG0M&list=PLTOj1BFS6AhMl8BG1IeIfv6wo6VmPP0sp" className="text-blue-500 hover:underline" target="_blank">2021年 人気 ボカロ</a></li>
-            <li><a href="https://www.youtube.com/watch?v=dHXC_ahjtEE&list=PLTOj1BFS6AhOsy4SeG1PrMk5lXkcz-Gg2" className="text-blue-500 hover:underline" target="_blank">2020年 人気 ボカロ</a></li>
-            <li><a href="https://www.youtube.com/watch?v=7zwCIz-Ohn4&list=PLTOj1BFS6AhNjA0PHfACKLV6P3yit0Q8n" className="text-blue-500 hover:underline" target="_blank">2019年 人気 ボカロ</a></li>
-            <li><a href="https://www.youtube.com/watch?v=Xg-qfsKN2_E&list=PLTOj1BFS6AhN6IT3NULwUAWtUEiv10a2Z" className="text-blue-500 hover:underline" target="_blank">2018年 人気 ボカロ</a></li>
-            <li><a href="https://www.youtube.com/watch?v=AS4q9yaWJkI&list=PLTOj1BFS6AhPGMOg-uJ2M6wNHQ_mS1LgT" className="text-blue-500 hover:underline" target="_blank">2017年 人気 ボカロ</a></li>
-            <li><a href="https://www.youtube.com/watch?v=8pGRdRhjX3o&list=PLTOj1BFS6AhNmN1OfnglYUiTLLBwvnflw" className="text-blue-500 hover:underline" target="_blank">2016年 人気 ボカロ</a></li>
-            <li><a href="https://www.youtube.com/watch?v=Jak2qiq_jJo&list=PLAaqbXSZIG6wKa-Hi3WVenBN2BgZKQu3c" className="text-blue-500 hover:underline" target="_blank">VOCALOID 2015</a></li>
-            <li><a href="https://www.youtube.com/watch?v=XogSflwXgpw&list=PLAaqbXSZIG6ymGmvwiMMVTKyT2uLTd0vf" className="text-blue-500 hover:underline" target="_blank">VOCALOID 2014</a></li>
-            <li><a href="https://www.youtube.com/watch?v=qnX2CdOBcDI&list=PLAaqbXSZIG6yHi-Pnr8i8gHbjXZLQlMkr" className="text-blue-500 hover:underline" target="_blank">VOCALOID 2013</a></li>
-            <li><a href="https://www.youtube.com/watch?v=PqJNc9KVIZE&list=PLAaqbXSZIG6xnG23a0dKhwa2SVsmqNEC_" className="text-blue-500 hover:underline" target="_blank">VOCALOID 2012</a></li>
-            <li><a href="https://www.youtube.com/watch?v=shs0rAiwsGQ&list=PLAaqbXSZIG6yyn2HLP5VDpkvVT0EZRn0v" className="text-blue-500 hover:underline" target="_blank">VOCALOID 2011</a></li>
-            <li><a href="https://www.youtube.com/watch?v=HOz-9FzIDf0&list=PLAaqbXSZIG6zGmOjDYoQJ9q2a6KW9LMfD" className="text-blue-500 hover:underline" target="_blank">VOCALOID 2010</a></li>
-            <li><a href="https://www.youtube.com/watch?v=hC8KrIY8qT4&list=PLAaqbXSZIG6xtoE1wmPDdwMj3-s1Sy7Zi" className="text-blue-500 hover:underline" target="_blank">VOCALOID 2009</a></li>
-            <li><a href="https://www.youtube.com/watch?v=6CWAcwOhAsQ&list=PLAaqbXSZIG6yz0J4F4yzydqCndEY5YrgY" className="text-blue-500 hover:underline" target="_blank">VOCALOID 2008</a></li>
-            <li><a href="https://www.youtube.com/watch?v=p3ymzi70Gjs&list=PLAaqbXSZIG6xmT6noHxHA2YD65cOXRZBS" className="text-blue-500 hover:underline" target="_blank">VOCALOID 2007</a></li>
+            <li><Link href="https://www.youtube.com/watch?v=19y8YTbvri8&list=PLTOj1BFS6AhN4Fz80WvdMu4cdOFZ1oW1q" className="text-blue-500 hover:underline" target="_blank">2024年 ボカロ ランキング</Link></li>
+            <li><Link href="https://www.youtube.com/watch?v=D6DVTLvOupE&list=PLTOj1BFS6AhOd93A68NicEahdJehOhXR6" className="text-blue-500 hover:underline" target="_blank">2023年 人気 ボカロ</Link></li>
+            <li><Link href="https://www.youtube.com/watch?v=vB8sxY_PJ_w&list=PLTOj1BFS6AhOSsQGt0SViSWpkz0P29KFM" className="text-blue-500 hover:underline" target="_blank">2022年 人気 ボカロ</Link></li>
+            <li><Link href="https://www.youtube.com/watch?v=e1xCOsgWG0M&list=PLTOj1BFS6AhMl8BG1IeIfv6wo6VmPP0sp" className="text-blue-500 hover:underline" target="_blank">2021年 人気 ボカロ</Link></li>
+            <li><Link href="https://www.youtube.com/watch?v=dHXC_ahjtEE&list=PLTOj1BFS6AhOsy4SeG1PrMk5lXkcz-Gg2" className="text-blue-500 hover:underline" target="_blank">2020年 人気 ボカロ</Link></li>
+            <li><Link href="https://www.youtube.com/watch?v=7zwCIz-Ohn4&list=PLTOj1BFS6AhNjA0PHfACKLV6P3yit0Q8n" className="text-blue-500 hover:underline" target="_blank">2019年 人気 ボカロ</Link></li>
+            <li><Link href="https://www.youtube.com/watch?v=Xg-qfsKN2_E&list=PLTOj1BFS6AhN6IT3NULwUAWtUEiv10a2Z" className="text-blue-500 hover:underline" target="_blank">2018年 人気 ボカロ</Link></li>
+            <li><Link href="https://www.youtube.com/watch?v=AS4q9yaWJkI&list=PLTOj1BFS6AhPGMOg-uJ2M6wNHQ_mS1LgT" className="text-blue-500 hover:underline" target="_blank">2017年 人気 ボカロ</Link></li>
+            <li><Link href="https://www.youtube.com/watch?v=8pGRdRhjX3o&list=PLTOj1BFS6AhNmN1OfnglYUiTLLBwvnflw" className="text-blue-500 hover:underline" target="_blank">2016年 人気 ボカロ</Link></li>
+            <li><Link href="https://www.youtube.com/watch?v=Jak2qiq_jJo&list=PLAaqbXSZIG6wKa-Hi3WVenBN2BgZKQu3c" className="text-blue-500 hover:underline" target="_blank">VOCALOID 2015</Link></li>
+            <li><Link href="https://www.youtube.com/watch?v=XogSflwXgpw&list=PLAaqbXSZIG6ymGmvwiMMVTKyT2uLTd0vf" className="text-blue-500 hover:underline" target="_blank">VOCALOID 2014</Link></li>
+            <li><Link href="https://www.youtube.com/watch?v=qnX2CdOBcDI&list=PLAaqbXSZIG6yHi-Pnr8i8gHbjXZLQlMkr" className="text-blue-500 hover:underline" target="_blank">VOCALOID 2013</Link></li>
+            <li><Link href="https://www.youtube.com/watch?v=PqJNc9KVIZE&list=PLAaqbXSZIG6xnG23a0dKhwa2SVsmqNEC_" className="text-blue-500 hover:underline" target="_blank">VOCALOID 2012</Link></li>
+            <li><Link href="https://www.youtube.com/watch?v=shs0rAiwsGQ&list=PLAaqbXSZIG6yyn2HLP5VDpkvVT0EZRn0v" className="text-blue-500 hover:underline" target="_blank">VOCALOID 2011</Link></li>
+            <li><Link href="https://www.youtube.com/watch?v=HOz-9FzIDf0&list=PLAaqbXSZIG6zGmOjDYoQJ9q2a6KW9LMfD" className="text-blue-500 hover:underline" target="_blank">VOCALOID 2010</Link></li>
+            <li><Link href="https://www.youtube.com/watch?v=hC8KrIY8qT4&list=PLAaqbXSZIG6xtoE1wmPDdwMj3-s1Sy7Zi" className="text-blue-500 hover:underline" target="_blank">VOCALOID 2009</Link></li>
+            <li><Link href="https://www.youtube.com/watch?v=6CWAcwOhAsQ&list=PLAaqbXSZIG6yz0J4F4yzydqCndEY5YrgY" className="text-blue-500 hover:underline" target="_blank">VOCALOID 2008</Link></li>
+            <li><Link href="https://www.youtube.com/watch?v=p3ymzi70Gjs&list=PLAaqbXSZIG6xmT6noHxHA2YD65cOXRZBS" className="text-blue-500 hover:underline" target="_blank">VOCALOID 2007</Link></li>
           </ul>
         </div>
         

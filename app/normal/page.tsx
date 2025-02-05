@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import songsData from "@/public/data/veryhard_hue.json"
 import { getRandomSongs }from "@/app/component/getQuiz";
 import { shuffleArray } from "@/app/component/shuffle";
+import Link from "next/link";
 
 type Song = typeof songsData.songs[number];
 export default function Home() {
@@ -11,7 +12,7 @@ export default function Home() {
     const [currentSong, setCurrentSong] = useState<Song | null>(null);
     const [currentNumber, setCurrentNumber] = useState(1);
     const [correctCount, setCorrectCount] = useState(0);
-    const [quizSet] = useState(getRandomSongs(1));
+    const [quizSet] = useState(getRandomSongs(0));
     
     useEffect(() => {
         // クライアント側でのみランダムな曲を選択
@@ -76,7 +77,7 @@ export default function Home() {
     return (
         <>
         <main className="mt-10 px-2 max-w-xl min-h-screen mx-auto">
-            <a href="/"><h2 className="text-3xl text-center font-bold">背景の色からボカロ曲を当てるゲームβ</h2></a>
+            <Link href="/"><h2 className="text-3xl text-center font-bold">背景の色からボカロ曲を当てるゲームβ</h2></Link>
             {/* リザルト画面と問題画面の切り分け */}
             {!isResult && (
                 <div>
@@ -163,9 +164,9 @@ export default function Home() {
                                         ></div>
 
                                         {/* YouTubeリンク付きタイトル */}
-                                        <a href={`https://www.youtube.com/watch?v=${song.id}`} target="_blank" rel="noopener noreferrer">
+                                        <Link href={`https://www.youtube.com/watch?v=${song.id}`} target="_blank" rel="noopener noreferrer">
                                             <p className="text-lg hover:underline">{song.title}</p>
-                                        </a>
+                                        </Link>
                                     </div>
                                 ))}
                             </div>
@@ -198,8 +199,8 @@ export default function Home() {
                     <p className="text-center text-2xl">あなたの得点は<span className="mx-1 text-3xl font-bold text-blue-500">{correctCount}</span>点でした！</p>
                     <p className="mt-2 text-center text-xl">難易度: 中級</p>
                     <div className="mt-4 flex justify-center">
-                        <a href="/easy" className="mt-4 mr-4 px-6 py-2 text-white bg-blue-600 hover:bg-blue-700 rounded-lg shadow-md transition-all">もう一度遊ぶ</a>
-                        <a href="/" className="mt-4 px-6 py-2 text-white bg-blue-600 hover:bg-blue-700 rounded-lg shadow-md transition-all">タイトルへ</a>
+                        <Link href="/easy" className="mt-4 mr-4 px-6 py-2 text-white bg-blue-600 hover:bg-blue-700 rounded-lg shadow-md transition-all">もう一度遊ぶ</Link>
+                        <Link href="/" className="mt-4 px-6 py-2 text-white bg-blue-600 hover:bg-blue-700 rounded-lg shadow-md transition-all">タイトルへ</Link>
                     </div>
                     <div>
                         <h2 className="mt-16 text-2xl">解答</h2>
@@ -220,9 +221,9 @@ export default function Home() {
                                             className="w-5 h-5 border-2 border-black rounded-lg"
                                             style={{ backgroundColor: quiz.correctSong.color }}
                                         ></div>
-                                        <a href={`https://www.youtube.com/watch?v=${quiz.correctSong.id}`} target="_blank" rel="noopener noreferrer">
+                                        <Link href={`https://www.youtube.com/watch?v=${quiz.correctSong.id}`} target="_blank" rel="noopener noreferrer">
                                             <p className="text-lg hover:underline">{quiz.correctSong.title}</p>
-                                        </a>
+                                        </Link>
                                     </div>
                                 ))}
                             </div>
@@ -231,9 +232,9 @@ export default function Home() {
                     <h2 className="mt-16 text-2xl">共有する</h2>
                     <hr className="mb-4"/>
                     <div className="flex items-center justify-center">
-                        <a href={`https://x.com/intent/post?text=${correctCount}点を獲得しました！(中級)%0A&url=https://vocolor.vercel.app%0A&hashtags=背景の色からボカロ曲を当てるゲーム`} target="_blank">
+                        <Link href={`https://x.com/intent/post?text=${correctCount}点を獲得しました！(中級)%0A&url=https://vocolor.vercel.app%0A&hashtags=背景の色からボカロ曲を当てるゲーム`} target="_blank">
                             <p className="mt-4 mr-4 px-4 py-1 text-white bg-gray-600 hover:bg-gray-700 rounded-lg shadow-md transition-all">Xで共有</p>
-                        </a>
+                        </Link>
                         <button
                         onClick={copyLink}
                         className="mt-4 px-4 py-1 text-white bg-gray-600 hover:bg-gray-700 rounded-lg shadow-md transition-all"
