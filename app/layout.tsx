@@ -26,6 +26,12 @@ export const metadata: Metadata = {
         height: 630
       }
     ]
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "背景の色からボカロ曲を当てるゲーム",
+    description: "背景の色からボカロ曲を当てよう！",
+    images: ["https://vocolor.vercel.app/card.png"]
   }
 };
 
@@ -37,7 +43,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <meta name="google" content="notranslate" />
-      <meta name="twitter:image" content="https://vocolor.vercel.app/card.png" />
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
