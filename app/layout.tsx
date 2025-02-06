@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     description: "背景の色からボカロ曲を当てよう！",
     images: [
       {
-        url: "/card.png",
+        url: "https://vocolor.vercel.app/card.png",
         width: 1200,
         height: 630
       }
