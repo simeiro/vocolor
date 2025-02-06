@@ -37,6 +37,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <meta name="google" content="notranslate" />
+      <meta name="twitter:image" content="https://vocolor.vercel.app/card.pngg" />
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
