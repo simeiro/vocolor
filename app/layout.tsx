@@ -15,6 +15,18 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "背景の色からボカロ曲を当てるゲーム",
   description: "背景の色からボカロ曲を当てよう！",
+  openGraph: {
+    siteName: "vocolor.vercel.app",
+    title: "背景の色からボカロ曲を当てるゲーム",
+    description: "背景の色からボカロ曲を当てよう！",
+    images: [
+      {
+        url: "/card.png",
+        width: 1200,
+        height: 630
+      }
+    ]
+  }
 };
 
 export default function RootLayout({

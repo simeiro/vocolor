@@ -7,6 +7,7 @@ import { shuffleArray } from "@/app/component/shuffle";
 import Link from "next/link";
 
 type Song = typeof songsData.songs[number];
+
 export default function Home() {
     const questions = 5;
     const [currentSong, setCurrentSong] = useState<Song | null>(null);
