@@ -2,8 +2,8 @@
 
 import { useEffect, useState } from "react";
 import songsData from "@/public/data/veryhard_hue.json"
-import { getRandomSongs }from "@/app/component/getQuiz";
-import { shuffleArray } from "@/app/component/shuffle";
+import { getRandomSongs }from "@/app/component/quiz/getQuiz";
+import { shuffleArray } from "@/app/component/quiz/shuffle";
 import Link from "next/link";
 
 type Song = typeof songsData.songs[number];
@@ -17,7 +17,7 @@ export default function Quiz(props: Props) {
     const [currentSong, setCurrentSong] = useState<Song | null>(null);
     const [currentNumber, setCurrentNumber] = useState(1);
     const [correctCount, setCorrectCount] = useState(0);
-    const [quizSet] = useState(getRandomSongs(props.dificulty));
+    const [quizSet, setQuizSet] = useState(getRandomSongs(props.dificulty));
     
     useEffect(() => {
         // クライアント側でのみランダムな曲を選択
@@ -72,6 +72,22 @@ export default function Quiz(props: Props) {
             console.error("コピーに失敗しました:", err);
         })
     };
+    const restart = () => {
+        setCorrectCount(0);
+        setCurrentNumber(1);
+        setAnswerResults([]);
+        setIsResult(false);
+        setAnswerButton(false);
+        setselectedChoice("");
+    
+        // 新しいクイズセットを生成
+        const newQuizSet = getRandomSongs(props.dificulty);
+        setQuizSet(newQuizSet);
+    
+        // クイズの選択肢を更新
+        setCurrentQuiz(shuffleArray([newQuizSet[0].correctSong, ...newQuizSet[0].wrongSongs]));
+    };
+    
     
     //ローディング表示
     if (!currentSong) {
@@ -214,12 +230,17 @@ export default function Quiz(props: Props) {
                     <p className="mt-2 text-center text-xl">難易度: {props.dificultyName}</p>
                     <div className="mt-4 flex justify-center">
                         <button
-                        onClick={() => window.location.reload()}
+                        onClick={() => restart()}
                         className="mt-4 mr-4 px-6 py-2 text-white bg-blue-600 hover:bg-blue-700 rounded-lg shadow-md transition-all"
                         >
                         もう一度遊ぶ
                         </button>
-                        <Link href="/" className="mt-4 px-6 py-2 text-white bg-blue-600 hover:bg-blue-700 rounded-lg shadow-md transition-all">タイトルへ</Link>
+                        <button
+                        onClick={() => window.location.reload()}
+                        className="mt-4 mr-4 px-6 py-2 text-white bg-blue-600 hover:bg-blue-700 rounded-lg shadow-md transition-all"
+                        >
+                        タイトルへ
+                        </button>
                     </div>
                     <div>
                         <h2 className="mt-16 text-2xl">解答</h2>
