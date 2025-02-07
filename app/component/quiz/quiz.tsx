@@ -98,7 +98,9 @@ export default function Quiz(props: Props) {
     return (
         <>
         <main className="mt-10 px-2 max-w-xl min-h-screen mx-auto">
-            <Link href="/"><h2 className="text-3xl text-center font-bold">背景の色からボカロ曲を当てるゲームβ</h2></Link>
+            <button onClick={() => window.location.reload()}>
+                <h2 className="text-3xl text-center font-bold">背景の色からボカロ曲を当てるゲームβ</h2>
+            </button>
             {/* リザルト画面と問題画面の切り分け */}
             {!isResult && (
                 <div>

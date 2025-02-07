@@ -63,7 +63,7 @@ export default function Home() {
             <Credit></Credit>
             <Footer />
           </div>
-        )};
+        )}
         {isPlaying && (
           <div>
             <Quiz dificulty={dificulty} dificultyName={dificultyName}></Quiz>
